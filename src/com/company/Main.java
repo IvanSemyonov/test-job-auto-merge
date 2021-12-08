@@ -10,14 +10,10 @@ public class Main {
         System.out.println("ggg");
     }
 
-    private static void newMethod(int a) {
-        System.out.println(a);
-    }
-
     private static void method(int f) {
         System.out.println("ggg");
     }
 
-    private static void newMethod() {
+    private void newMethod() {
     }
 }
