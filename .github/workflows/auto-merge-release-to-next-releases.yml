@@ -15,7 +15,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
       - name: Send message to Telegram chat
         id: sendMessageToTelegram
-        if: failure()
+#        if: failure()
         uses: dawidd6/action-send-mail@v3.6.0
         with:
           # Required mail server address:
