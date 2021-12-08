@@ -14,7 +14,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
       - name: Send message to Telegram chat
-        continue-on-error: true
         id: sendMessageToTelegram
         if: failure()
         uses: dawidd6/action-send-mail@v3.6.0
@@ -23,10 +22,10 @@ jobs:
           server_address: smtp.gmail.com
           # Required mail server port:
           server_port: 465
-          # Optional (recommended): mail server username:
-          username: ${{secrets.MAIL_USERNAME}}
-          # Optional (recommended) mail server password:
-          password: ${{secrets.MAIL_PASSWORD}}
+#          # Optional (recommended): mail server username:
+#          username: ${{secrets.MAIL_USERNAME}}
+#          # Optional (recommended) mail server password:
+#          password: ${{secrets.MAIL_PASSWORD}}
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
@@ -48,8 +47,8 @@ jobs:
             message to telegram
             message to telegram
             message to telegram
+        continue-on-error: true
       - name: Check on failure step "sendMessageToTelegram"
-        if: failure()
         uses: dawidd6/action-send-mail@v3.6.0
         with:
           # Required mail server address:
