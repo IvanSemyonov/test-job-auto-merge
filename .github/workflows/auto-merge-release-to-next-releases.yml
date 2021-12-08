@@ -26,7 +26,7 @@ jobs:
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
             Repository: [${{ github.repository }}](https://github.com/${{ github.repository }})
             Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
-    - name: Check on failure step "sendMessageToTelegram"
+      - name: Check on failure step "sendMessageToTelegram"
         if: ${{ failure() }} && ${{ steps.sendMessageToTelegram.outcome }} == failure
         uses: dawidd6/action-send-mail@v3.6.0
         with:
