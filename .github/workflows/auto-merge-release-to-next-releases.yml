@@ -14,19 +14,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
       - name: Send message to Telegram chat
-          id: sendMessageToTelegram
-          if: failure()
-          uses: appleboy/telegram-action@v0.1.1
-          with:
-            to: ${{ secrets.TELEGRAM_CHAT_ID }}
-            token: ${{ secrets.TELEGRAM_TOKEN }}
-            format: markdown
-            disable_web_page_preview: true
-            message: |
-              🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
-              Repository: [${{ github.repository }}](https://github.com/${{ github.repository }})
-              Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
-      - name: Check on failure step "sendMessageToTelegram"
+        id: sendMessageToTelegram
+        if: failure()
+        uses: appleboy/telegram-action@v0.1.1
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          disable_web_page_preview: true
+          message: |
+            🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
+            Repository: [${{ github.repository }}](https://github.com/${{ github.repository }})
+            Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
+    - name: Check on failure step "sendMessageToTelegram"
         if: ${{ failure() }} && ${{ steps.sendMessageToTelegram.outcome }} == failure
         uses: dawidd6/action-send-mail@v3.6.0
         with:
