@@ -9,4 +9,8 @@ public class Main {
     private static void method() {
         System.out.println("ggg");
     }
+
+    private static void newMethod(int blabla) {
+        System.out.println(blabla);
+    }
 }
