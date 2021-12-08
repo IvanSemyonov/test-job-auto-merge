@@ -13,7 +13,7 @@ jobs:
         uses: sergeevichvn/gh-action-nightly-merge@v1.3.5
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
-      - name: sendMessageToTelegram
+      - name: Send message to Telegram chat
         continue-on-error: true
         id: sendMessageToTelegram
         if: failure()
@@ -49,7 +49,7 @@ jobs:
             message to telegram
             message to telegram
       - name: Check on failure step "sendMessageToTelegram"
-        if: (${{ success() }} || ${{ failure() }}) && (${{ steps.sendMessageToTelegram.outcome }} == 'failure')
+        if: (${{ success() }} || ${{ failure() }}) && (${{ steps.sendMessageToTelegram.outcome }} == failure)
         uses: dawidd6/action-send-mail@v3.6.0
         with:
           # Required mail server address:
