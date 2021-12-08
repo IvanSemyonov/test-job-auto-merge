@@ -13,4 +13,11 @@ public class Main {
     private static void newMethod(int blabla) {
         System.out.println(blabla);
     }
+
+    private static void method(int f) {
+        System.out.println("ggg");
+    }
+
+    private void newMethod() {
+    }
 }
