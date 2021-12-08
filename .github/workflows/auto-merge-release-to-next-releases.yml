@@ -47,39 +47,39 @@ jobs:
             message to telegram
             message to telegram
             message to telegram
-#        continue-on-error: true
-#      - name: Check on failure step "sendMessageToTelegram"
-#        if: steps.sendMessageToTelegram.outcome == 'failure'
-#        uses: dawidd6/action-send-mail@v3.6.0
-#        with:
-#          # Required mail server address:
-#          server_address: smtp.gmail.com
-#          # Required mail server port:
-#          server_port: 465
-#          # Optional (recommended): mail server username:
-#          username: ${{secrets.MAIL_USERNAME}}
-#          # Optional (recommended) mail server password:
-#          password: ${{secrets.MAIL_PASSWORD}}
-#          # Required mail subject:
-#          subject: Github Actions job result
-#          # Required recipients' addresses:
-#          to: semenovio@sovcombank.ru
-#          # Required sender full name (address can be skipped):
-#          from: semyonov.o2001@gmail.com
-#
-#          # Optional plain body:
-#          body: |
-#            🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
-#            Repository: [${{ github.repository }}](https://github.com/${{ github.repository }})
-#            Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
-#            Error sending message to Telegram chat
-#            Error sending message to Telegram chat
-#            Error sending message to Telegram chat
-#            Error sending message to Telegram chat
-#            Error sending message to Telegram chat
-#            Error sending message to Telegram chat
-#            Error sending message to Telegram chat
-#            Error sending message to Telegram chat
+        continue-on-error: true
+      - name: Check on failure step "sendMessageToTelegram"
+        if: steps.sendMessageToTelegram.outcome == 'failure'
+        uses: dawidd6/action-send-mail@v3.6.0
+        with:
+          # Required mail server address:
+          server_address: smtp.gmail.com
+          # Required mail server port:
+          server_port: 465
+          # Optional (recommended): mail server username:
+          username: ${{secrets.MAIL_USERNAME}}
+          # Optional (recommended) mail server password:
+          password: ${{secrets.MAIL_PASSWORD}}
+          # Required mail subject:
+          subject: Github Actions job result
+          # Required recipients' addresses:
+          to: semenovio@sovcombank.ru
+          # Required sender full name (address can be skipped):
+          from: semyonov.o2001@gmail.com
+
+          # Optional plain body:
+          body: |
+            🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
+            Repository: [${{ github.repository }}](https://github.com/${{ github.repository }})
+            Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
+            Error sending message to Telegram chat
+            Error sending message to Telegram chat
+            Error sending message to Telegram chat
+            Error sending message to Telegram chat
+            Error sending message to Telegram chat
+            Error sending message to Telegram chat
+            Error sending message to Telegram chat
+            Error sending message to Telegram chat
           # Optional carbon copy recipients:
 #          cc: kyloren@example.com,leia@example.com
           # Optional blind carbon copy recipients:
