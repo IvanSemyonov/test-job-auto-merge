@@ -9,11 +9,4 @@ public class Main {
     private static void method() {
         System.out.println("ggg");
     }
-
-    private static void method(int f) {
-        System.out.println("ggg");
-    }
-
-    private void newMethod() {
-    }
 }
