@@ -8,5 +8,8 @@ public class Main {
 
     private static void method() {
         System.out.println("ggg");
+        System.out.println("ggg");
+        System.out.println("ggg");
+        System.out.println("ggg");
     }
 }
