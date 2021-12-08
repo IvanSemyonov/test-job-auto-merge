@@ -7,7 +7,7 @@ public class Main {
     }
 
     private static void method() {
-        System.out.println("ggg");
+        System.out.println("cxsfcx");
     }
 
     private static void newMethod(int blabla) {
