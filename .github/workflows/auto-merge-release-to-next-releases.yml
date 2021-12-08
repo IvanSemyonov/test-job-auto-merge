@@ -65,7 +65,7 @@ jobs:
           # Required recipients' addresses:
           to: semenovio@sovcombank.ru
           # Required sender full name (address can be skipped):
-          from: Ivan114
+          from: Иван Семеновл
 
           # Optional plain body:
           body: |
