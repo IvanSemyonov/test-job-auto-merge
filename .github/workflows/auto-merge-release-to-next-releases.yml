@@ -49,7 +49,7 @@ jobs:
             message to telegram
         continue-on-error: true
       - name: Check on failure step "sendMessageToTelegram"
-        if: failure()
+        if: ${{ steps.sendMessageToTelegram.outcome }} != 'success'
         uses: dawidd6/action-send-mail@v3.6.0
         with:
           # Required mail server address:
