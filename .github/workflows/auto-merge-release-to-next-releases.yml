@@ -13,19 +13,20 @@ jobs:
         uses: sergeevichvn/gh-action-nightly-merge@v1.3.5
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
-      - name: Send message to Telegram chat
-        id: sendMessageToTelegram
-        if: failure()
-        uses: appleboy/telegram-action@v0.1.1
+      - uses: dawidd6/action-send-mail@v3.6.0
         with:
-          to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: markdown
-          disable_web_page_preview: true
-          message: |
+          server_address: ${{secrets.SERVER_ADDRESS}} #smtp.gmail.com
+          server_port: ${{secrets.SERVER_PORT}} #465
+          username: ${{secrets.FROM_MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Github Actions job result
+          to: ${{secrets.TO_MAIL_USERNAME}} #semenovio@sovcombank.ru
+          from: auto-merge-rc-job
+          body: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
             Repository: [${{ github.repository }}](https://github.com/${{ github.repository }})
             Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
+            Tg chat
       - name: Check on failure step "sendMessageToTelegram"
         if: ${{ failure() }} && ${{ steps.sendMessageToTelegram.outcome }} == failure
         uses: dawidd6/action-send-mail@v3.6.0
