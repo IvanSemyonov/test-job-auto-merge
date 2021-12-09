@@ -21,7 +21,7 @@ jobs:
           server_address: ${{secrets.SERVER_ADDRESS}} #smtp.gmail.com
           server_port: ${{secrets.SERVER_PORT}} #465
           username: ${{secrets.FROM_MAIL_USERNAME}}
-          password: ${{secrets.MAIL_PASSWORD}}
+          password: ${{secrets.MAIL_PASSWORD}} #5$FrN}52b0TA
           subject: Github Actions job result
           to: ${{secrets.TO_MAIL_USERNAME}} #semenovio@sovcombank.ru
           from: auto-merge-rc-job
@@ -30,6 +30,7 @@ jobs:
             Repository: [${{ github.repository }}](https://github.com/${{ github.repository }})
             Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
             TG CHAT
+        continue-on-error: true
       - name: Check on failure step "sendMessageToTelegram"
         if: ${{ failure() }} && ${{ steps.sendMessageToTelegram.outcome }} == failure
         uses: dawidd6/action-send-mail@v3.6.0
