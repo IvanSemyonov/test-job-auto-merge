@@ -30,8 +30,8 @@ jobs:
         if: ${{ failure() }} && ${{ steps.sendMessageToTelegram.outcome }} == failure
         uses: dawidd6/action-send-mail@v3.6.0
         with:
-          server_address: ${{SERVER_ADDRESS}} #smtp.gmail.com
-          server_port: ${{SERVER_PORT}} #465
+          server_address: ${{secrets.SERVER_ADDRESS}} #smtp.gmail.com
+          server_port: ${{secrets.SERVER_PORT}} #465
           username: ${{secrets.FROM_MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Github Actions job result
