@@ -30,41 +30,15 @@ jobs:
         if: ${{ failure() }} && ${{ steps.sendMessageToTelegram.outcome }} == failure
         uses: dawidd6/action-send-mail@v3.6.0
         with:
-          # Required mail server address:
-          server_address: smtp.gmail.com
-          # Required mail server port:
-          server_port: 465
-#          # Optional (recommended): mail server username:
-#          username: ${{secrets.MAIL_USERNAME}}
-#          # Optional (recommended) mail server password:
-#          password: ${{secrets.MAIL_PASSWORD}}
-          # Required mail subject:
+          server_address: ${{SERVER_ADDRESS}} #smtp.gmail.com
+          server_port: ${{SERVER_PORT}} #465
+          username: ${{secrets.FROM_MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
           subject: Github Actions job result
-          # Required recipients' addresses:
-          to: semenovio@sovcombank.ru
-          # Required sender full name (address can be skipped):
-          from: Иван Семенов
-
-          # Optional plain body:
+          to: ${{secrets.TO_MAIL_USERNAME}} #semenovio@sovcombank.ru
+          from: auto-merge-rc-job
           body: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
             Repository: [${{ github.repository }}](https://github.com/${{ github.repository }})
             Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
             Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-          # Optional carbon copy recipients:
-#          cc: kyloren@example.com,leia@example.com
-          # Optional blind carbon copy recipients:
-#          bcc: r2d2@example.com,hansolo@example.com
-          # Optional recipient of the email response:
-#          reply_to: luke@example.com
-          # Optional Message ID this message is replying to:
-#          in_reply_to: <random-luke@example.com>
-          # Optional unsigned/invalid certificates allowance:
-#          ignore_cert: true
