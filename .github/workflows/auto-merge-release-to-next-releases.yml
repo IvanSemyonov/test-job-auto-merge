@@ -13,7 +13,7 @@ jobs:
         uses: sergeevichvn/gh-action-nightly-merge@v1.3.5
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
-      - uses: dawidd6/action-send-mail@v3.6.0
+      - name: Send message to Telegram chat
         with:
           server_address: ${{secrets.SERVER_ADDRESS}} #smtp.gmail.com
           server_port: ${{secrets.SERVER_PORT}} #465
