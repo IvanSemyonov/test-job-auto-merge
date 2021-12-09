@@ -32,7 +32,7 @@ jobs:
             Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
             TG CHAT
       - name: Check on failure step "sendMessageToTelegram"
-        if: ${{failure()}} && ${{steps.sendMessageToTelegram.outcome}} == failure
+        if: (${{ success() }} || ${{ failure() }}) && (${{ steps.sendMessageToTelegram.outcome }} == failure)
         uses: dawidd6/action-send-mail@v3.6.0
         with:
           server_address: ${{secrets.SERVER_ADDRESS}} #smtp.gmail.com
