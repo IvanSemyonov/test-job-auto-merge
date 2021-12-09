@@ -32,7 +32,7 @@ jobs:
             TG CHAT
         continue-on-error: true
       - name: Check on failure step "sendMessageToTelegram"
-        if: ${{ failure() }} && ${{ steps.sendMessageToTelegram.outcome }} == 'failure'
+        if: ${{failure()}} && ${{steps.sendMessageToTelegram.outcome}} == failure
         uses: dawidd6/action-send-mail@v3.6.0
         with:
           server_address: ${{secrets.SERVER_ADDRESS}} #smtp.gmail.com
