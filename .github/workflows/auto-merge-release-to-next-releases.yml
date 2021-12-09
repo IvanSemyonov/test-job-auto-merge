@@ -19,9 +19,9 @@ jobs:
         uses: dawidd6/action-send-mail@v3.6.0
         with:
           server_address: ${{secrets.SERVER_ADDRESS}} #smtp.gmail.com
-          server_port: ${{secrets.SERVER_PORT}} #465
-          username: ${{secrets.FROM_MAIL_USERNAME}}
-          password: ${{secrets.MAIL_PASSWORD}}
+          server_port: 587 #465
+          username: sovcom.mail.test@gmail.com
+          password: Phezei0I
           subject: Github Actions job result
           to: ${{secrets.TO_MAIL_USERNAME}} #semenovio@sovcombank.ru
           from: auto-merge-rc-job
