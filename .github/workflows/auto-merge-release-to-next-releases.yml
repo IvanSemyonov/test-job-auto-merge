@@ -14,7 +14,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
       - name: Send message to Telegram chat
-        continue-on-error: true
         id: sendMessageToTelegram
         if: failure()
         uses: dawidd6/action-send-mail@v3.6.0
@@ -31,6 +30,7 @@ jobs:
             Repository: [${{ github.repository }}](https://github.com/${{ github.repository }})
             Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
             TG CHAT
+        continue-on-error: false
       - name: Check on failure step "sendMessageToTelegram"
         if: (${{ success() }} || ${{ failure() }}) && (${{ steps.sendMessageToTelegram.outcome }} == failure)
         uses: dawidd6/action-send-mail@v3.6.0
