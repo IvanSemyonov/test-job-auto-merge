@@ -22,17 +22,17 @@ jobs:
           # Required mail server address:
           server_address: smtp.gmail.com
           # Required mail server port:
-          server_port: 465
+          server_port: 587
           # Optional (recommended): mail server username:
-          username: ${{secrets.FROM_MAIL_USERNAME}}
+          username: sovcombank.test.1@gmail.com
           # Optional (recommended) mail server password:
-          password: ${{secrets.MAIL_PASSWORD}}
+          password: Phezei0I
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
           to: semenovio@sovcombank.ru
           # Required sender full name (address can be skipped):
-          from: semyonov.o2001@gmail.com
+          from: auto-merge-rc-job
           # Optional plain body:
           body: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
@@ -55,18 +55,17 @@ jobs:
           # Required mail server address:
           server_address: smtp.gmail.com
           # Required mail server port:
-          server_port: 465
+          server_port: 587
           # Optional (recommended): mail server username:
-          username: ${{secrets.FROM_MAIL_USERNAME}}
+          username: sovcombank.test.1@gmail.com
           # Optional (recommended) mail server password:
-          password: ${{secrets.MAIL_PASSWORD}}
+          password: Phezei0I
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
           to: semenovio@sovcombank.ru
           # Required sender full name (address can be skipped):
-          from: semyonov.o2001@gmail.com
-
+          from: auto-merge-rc-job
           # Optional plain body:
           body: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
