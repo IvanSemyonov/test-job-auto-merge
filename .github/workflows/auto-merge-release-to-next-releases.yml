@@ -20,13 +20,13 @@ jobs:
         uses: dawidd6/action-send-mail@v3.6.0
         with:
           # Required mail server address:
-          server_address: smtp.gmail.com
+          server_address: smtp.yandex.ru
           # Required mail server port:
           server_port: 465
           # Optional (recommended): mail server username:
-          username: sovcombank.test.1@gmail.com
+          username: auto-merge-rc-job@yandex.ru
           # Optional (recommended) mail server password:
-          password: Phezei0I
+          password: 5$FrN}52b0TA
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
@@ -53,13 +53,13 @@ jobs:
         uses: dawidd6/action-send-mail@v3.6.0
         with:
           # Required mail server address:
-          server_address: smtp.gmail.com
+          server_address: smtp.yandex.ru
           # Required mail server port:
           server_port: 465
           # Optional (recommended): mail server username:
-          username: sovcombank.test.1@gmail.com
+          username: auto-merge-rc-job@yandex.ru
           # Optional (recommended) mail server password:
-          password: Phezei0I
+          password: 5$FrN}52b0TA
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
