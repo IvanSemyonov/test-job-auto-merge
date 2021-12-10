@@ -33,6 +33,7 @@ jobs:
           to: semenovio@sovcombank.ru
           # Required sender full name (address can be skipped):
           from: auto-merge-rc-job
+          secure: true
           # Optional plain body:
           body: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
@@ -66,6 +67,7 @@ jobs:
           to: semenovio@sovcombank.ru
           # Required sender full name (address can be skipped):
           from: auto-merge-rc-job
+          secure: true
           # Optional plain body:
           body: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
