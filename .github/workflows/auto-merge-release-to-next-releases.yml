@@ -22,7 +22,7 @@ jobs:
           # Required mail server address:
           server_address: smtp.gmail.com
           # Required mail server port:
-          server_port: 587
+          server_port: 465
           # Optional (recommended): mail server username:
           username: sovcombank.test.1@gmail.com
           # Optional (recommended) mail server password:
@@ -33,7 +33,6 @@ jobs:
           to: semenovio@sovcombank.ru
           # Required sender full name (address can be skipped):
           from: auto-merge-rc-job
-          secure: true
           # Optional plain body:
           body: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
@@ -56,7 +55,7 @@ jobs:
           # Required mail server address:
           server_address: smtp.gmail.com
           # Required mail server port:
-          server_port: 587
+          server_port: 465
           # Optional (recommended): mail server username:
           username: sovcombank.test.1@gmail.com
           # Optional (recommended) mail server password:
@@ -67,7 +66,6 @@ jobs:
           to: semenovio@sovcombank.ru
           # Required sender full name (address can be skipped):
           from: auto-merge-rc-job
-          secure: false
           # Optional plain body:
           body: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
