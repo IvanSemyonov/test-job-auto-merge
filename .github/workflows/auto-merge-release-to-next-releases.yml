@@ -12,26 +12,27 @@ jobs:
       - name: Auto-merge
         uses: sergeevichvn/gh-action-nightly-merge@v1.3.5
         env:
-          GITHUB_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GIT_ACCESS_TOKENN }}
       - name: Send message to Telegram chat
+        continue-on-error: true
         id: sendMessageToTelegram
         if: failure()
         uses: dawidd6/action-send-mail@v3.6.0
         with:
           # Required mail server address:
-          server_address: smtp.gmail.com
+          server_address: smtp.yandex.ru
           # Required mail server port:
           server_port: 465
           # Optional (recommended): mail server username:
-          username: ${{secrets.MAIL_USERNAME}}
+          username: auto-merge-rc-job@yandex.ru
           # Optional (recommended) mail server password:
-          password: ${{secrets.MAIL_PASSWORD}}
+          password: 5$FrN}52b0TA___
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
           to: semenovio@sovcombank.ru
           # Required sender full name (address can be skipped):
-          from: semyonov.o2001@gmail.com
+          from: auto-merge-rc-job
           # Optional plain body:
           body: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
@@ -47,26 +48,24 @@ jobs:
             message to telegram
             message to telegram
             message to telegram
-        continue-on-error: true
       - name: Check on failure step "sendMessageToTelegram"
-        if: steps.sendMessageToTelegram.outcome == 'failure'
+        if: failure() && steps.sendMessageToTelegram.outcome == 'failure'
         uses: dawidd6/action-send-mail@v3.6.0
         with:
           # Required mail server address:
-          server_address: smtp.gmail.com
+          server_address: smtp.yandex.ru
           # Required mail server port:
           server_port: 465
           # Optional (recommended): mail server username:
-          username: ${{secrets.MAIL_USERNAME}}
+          username: auto-merge-rc-job@yandex.ru
           # Optional (recommended) mail server password:
-          password: ${{secrets.MAIL_PASSWORD}}
+          password: 5$FrN}52b0TA
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
           to: semenovio@sovcombank.ru
           # Required sender full name (address can be skipped):
-          from: semyonov.o2001@gmail.com
-
+          from: auto-merge-rc-job
           # Optional plain body:
           body: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
@@ -80,13 +79,3 @@ jobs:
             Error sending message to Telegram chat
             Error sending message to Telegram chat
             Error sending message to Telegram chat
-          # Optional carbon copy recipients:
-#          cc: kyloren@example.com,leia@example.com
-          # Optional blind carbon copy recipients:
-#          bcc: r2d2@example.com,hansolo@example.com
-          # Optional recipient of the email response:
-#          reply_to: luke@example.com
-          # Optional Message ID this message is replying to:
-#          in_reply_to: <random-luke@example.com>
-          # Optional unsigned/invalid certificates allowance:
-#          ignore_cert: true
