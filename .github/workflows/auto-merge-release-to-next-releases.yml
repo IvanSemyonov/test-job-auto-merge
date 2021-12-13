@@ -72,10 +72,3 @@ jobs:
             Repository: [${{ github.repository }}](https://github.com/${{ github.repository }})
             Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
             Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
