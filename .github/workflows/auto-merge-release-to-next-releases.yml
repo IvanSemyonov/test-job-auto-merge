@@ -24,7 +24,7 @@ jobs:
           # Required mail server port:
           server_port: 465
           # Optional (recommended): mail server username:
-          username: auto-merge-rc-job@yandex.ruы
+          username: auto-merge-rc-job@yandex.ru
           # Optional (recommended) mail server password:
           password: 5$FrN}52b0TA___
           # Required mail subject:
@@ -56,10 +56,10 @@ jobs:
           server_address: mail.sovcombank.group
           # Required mail server port:
           server_port: 25
-          #          # Optional (recommended): mail server username:
-          #          username: auto-merge-rc-job@yandex.ru
-          #          # Optional (recommended) mail server password:
-          #          password: 5$FrN}52b0TA
+          # Optional (recommended): mail server username:
+#          username: auto-merge-rc-job@yandex.ru
+          # Optional (recommended) mail server password:
+#          password: 5$FrN}52b0TA
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
@@ -71,4 +71,11 @@ jobs:
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
             Repository: [${{ github.repository }}](https://github.com/${{ github.repository }})
             Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
+            Error sending message to Telegram chat
+            Error sending message to Telegram chat
+            Error sending message to Telegram chat
+            Error sending message to Telegram chat
+            Error sending message to Telegram chat
+            Error sending message to Telegram chat
+            Error sending message to Telegram chat
             Error sending message to Telegram chat
