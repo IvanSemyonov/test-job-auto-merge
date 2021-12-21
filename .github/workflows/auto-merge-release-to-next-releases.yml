@@ -50,7 +50,7 @@ jobs:
             message to telegram
       - name: Check on failure step "sendMessageToTelegram"
         if: failure() && steps.sendMessageToTelegram.outcome == 'failure'
-        uses: IvanSemyonov/send-mail@ref
+        uses: IvanSemyonov/send-mail@main
         with:
           # Required mail server address:
           server_address: smtp.yandex.ru
