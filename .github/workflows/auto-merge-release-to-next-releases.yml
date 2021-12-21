@@ -63,7 +63,7 @@ jobs:
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
-          to: semenovio@sovcombank.ru
+          to: ${{ github.actor }}
           # Required sender full name (address can be skipped):
           from: auto-merge-rc-job@yandex.ru
           # Optional plain body:
