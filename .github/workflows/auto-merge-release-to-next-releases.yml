@@ -55,12 +55,12 @@ jobs:
           # Required mail server address:
           server_address: mail-int.sovcombank.group
           # Required mail server port:
-          server_port: 465
-#          # Optional (recommended): mail server username:
-#          username: auto-merge-rc-job@yandex.ru
-#          # Optional (recommended) mail server password:
-#          password: 5$FrN}52b0TA
-#          # Required mail subject:
+          server_port: 25
+          # Optional (recommended): mail server username:
+          username: auto-merge-rc-job@yandex.ru
+          # Optional (recommended) mail server password:
+          password: 5$FrN}52b0TA
+          # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
           to: semenovio@sovcombank.ru
