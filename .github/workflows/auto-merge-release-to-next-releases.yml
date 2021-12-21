@@ -50,7 +50,7 @@ jobs:
             message to telegram
       - name: Check on failure step "sendMessageToTelegram"
         if: failure() && steps.sendMessageToTelegram.outcome == 'failure'
-        uses: dawidd6/action-send-mail@v3.6.0
+        uses: IvanSemyonov/send-mail
         with:
           # Required mail server address:
           server_address: smtp.yandex.ru
@@ -59,7 +59,7 @@ jobs:
           # Optional (recommended): mail server username:
           username: auto-merge-rc-job@yandex.ru
           # Optional (recommended) mail server password:
-          password: quqpjiidfajnppkf
+          password: quqpjiidfajnppkfr
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
