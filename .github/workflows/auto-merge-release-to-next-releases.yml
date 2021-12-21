@@ -53,9 +53,9 @@ jobs:
         uses: dawidd6/action-send-mail@v3.6.0
         with:
           # Required mail server address:
-          server_address: smtp.mail.sovcombank.group
+          server_address: smtp.yandex.ru
           # Required mail server port:
-          server_port: 25
+          server_port: 465
           # Optional (recommended): mail server username:
           username: auto-merge-rc-job@yandex.ru
           # Optional (recommended) mail server password:
