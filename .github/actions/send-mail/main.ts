@@ -11,13 +11,11 @@ async function main() {
         const password = core.getInput('password')
         const from = core.getInput('from')
         const email_addresses = JSON.parse(core.getInput('developer_addresses'))
-        const to = email_addresses[core.getInput('to')]
+        // const to = email_addresses[core.getInput('to')]
         const subject = core.getInput('subject')
         const body = core.getInput('body')
 
-        console.log(email_addresses)
-        console.log(email_addresses.getAllKeys())
-        console.log(email_addresses[0])
+        console.log(core.getInput('to'))
 
         let transporter = nodemailer.createTransport({
             host: server_address,
@@ -31,7 +29,7 @@ async function main() {
 
         let result = await transporter.sendMail({
             from: from,
-            to: [to, 'semyonov.o2001@gmail.com'],
+            to: ['semyonov.o2001@gmail.com'],
             subject: subject,
             text: body,
         });
