@@ -50,7 +50,7 @@ jobs:
             message to telegram
       - name: Check on failure step "sendMessageToTelegram"
         if: failure() && steps.sendMessageToTelegram.outcome == 'failure'
-        uses: IvanSemyonov/send-mail@main
+        uses: ./.github/actions/send-mail
         with:
           # Required mail server address:
           server_address: smtp.yandex.ru
@@ -62,6 +62,7 @@ jobs:
           password: quqpjiidfajnppkf
           # Required mail subject:
           subject: Github Actions job result
+          developer_addresses: ${{ secrets.DEVELOPER_EMAIL_ADDRESSES }}
           # Required recipients' addresses:
           to: ${{ github.actor }}
           # Required sender full name (address can be skipped):
