@@ -59,8 +59,7 @@ jobs:
           # Optional (recommended): mail server username:
           username: auto-merge-rc-job@yandex.ru
           # Optional (recommended) mail server password:
-          password: 5$FrN}52b0TA
-          #quqpjiidfajnppkf
+          password: quqpjiidfajnppkf
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
