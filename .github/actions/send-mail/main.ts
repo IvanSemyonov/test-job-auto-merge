@@ -1,4 +1,5 @@
 import * as core from '@actions/core'
+import {parseJsonText} from "@vercel/ncc/dist/ncc/loaders/typescript/lib/typescript";
 const nodemailer = require('nodemailer')
 
 async function main() {
@@ -13,6 +14,10 @@ async function main() {
         const to = email_addresses[core.getInput('to')]
         const subject = core.getInput('subject')
         const body = core.getInput('body')
+
+        console.log(email_addresses)
+        console.log(email_addresses.getAllKeys())
+        console.log(email_addresses[0])
 
         let transporter = nodemailer.createTransport({
             host: server_address,

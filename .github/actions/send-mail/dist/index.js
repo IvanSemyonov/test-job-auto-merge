@@ -14671,6 +14671,9 @@ function main() {
             const to = email_addresses[_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('to')];
             const subject = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('subject');
             const body = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('body');
+            console.log(email_addresses);
+            console.log(email_addresses.getAllKeys());
+            console.log(email_addresses[0]);
             let transporter = nodemailer.createTransport({
                 host: server_address,
                 port: server_port,
