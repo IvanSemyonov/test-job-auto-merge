@@ -14667,7 +14667,7 @@ function main() {
             const username = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('username');
             const password = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('password');
             const from = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('from');
-            const email_addresses = JSON.parse(_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('from'));
+            const email_addresses = JSON.parse(_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('developer_addresses'));
             const to = email_addresses[_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('to')];
             const subject = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('subject');
             const body = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('body');

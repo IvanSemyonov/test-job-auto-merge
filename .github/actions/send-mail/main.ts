@@ -10,7 +10,7 @@ async function main() {
         const username = core.getInput('username')
         const password = core.getInput('password')
         const from = core.getInput('from')
-        const email_addresses = JSON.parse(core.getInput('from'))
+        const email_addresses = JSON.parse(core.getInput('developer_addresses'))
         const to = email_addresses[core.getInput('to')]
         const subject = core.getInput('subject')
         const body = core.getInput('body')
