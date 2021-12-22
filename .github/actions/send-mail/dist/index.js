@@ -14668,10 +14668,14 @@ function main() {
             const password = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('password');
             const from = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('from');
             const email_addresses = JSON.parse(_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('developer_addresses'));
-            // const to = email_addresses[core.getInput('to')]
+            const to = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('to');
             const subject = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('subject');
             const body = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('body');
             console.log(_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('to'));
+            let toM = to.split(' ').map(githun_name => {
+                return email_addresses[githun_name];
+            });
+            console.log(toM);
             let transporter = nodemailer.createTransport({
                 host: server_address,
                 port: server_port,
@@ -14683,7 +14687,7 @@ function main() {
             });
             let result = yield transporter.sendMail({
                 from: from,
-                to: ['semyonov.o2001@gmail.com'],
+                to: toM,
                 subject: subject,
                 text: body,
             });

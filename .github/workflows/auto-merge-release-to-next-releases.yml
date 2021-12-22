@@ -64,7 +64,7 @@ jobs:
           subject: Github Actions job result
           developer_addresses: ${{ secrets.DEVELOPER_EMAIL_ADDRESSES }}
           # Required recipients' addresses:
-          to: ${{ github.actor }}, ffffff
+          to: ${{ github.actor }} ffffff
           # Required sender full name (address can be skipped):
           from: auto-merge-rc-job@yandex.ru
           # Optional plain body:
