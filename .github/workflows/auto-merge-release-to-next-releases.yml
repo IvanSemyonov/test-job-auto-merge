@@ -38,45 +38,13 @@ jobs:
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
             Repository: [${{ github.repository }}](https://github.com/${{ github.repository }})
             Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
-            message to telegram
-            message to telegram
-            message to telegram
-            message to telegram
-            message to telegram
-            message to telegram
-            message to telegram
-            message to telegram
-            message to telegram
-            message to telegram
       - name: Check on failure step "sendMessageToTelegram"
         if: failure() && steps.sendMessageToTelegram.outcome == 'failure'
-        uses: ./.github/actions/send-mail
-        with:
-          # Required mail server address:
-          server_address: smtp.yandex.ru
-          # Required mail server port:
-          server_port: 465
-          # Optional (recommended): mail server username:
-          username: auto-merge-rc-job@yandex.ru
-          # Optional (recommended) mail server password:
-          password: quqpjiidfajnppkf
-          # Required mail subject:
-          subject: Github Actions job result
-          developer_addresses: ${{ secrets.DEVELOPER_EMAIL_ADDRESSES }}
-          # Required recipients' addresses:
-          to: ${{ github.actor }} fffffffff
-          # Required sender full name (address can be skipped):
-          from: auto-merge-rc-job@yandex.ru
-          # Optional plain body:
-          body: |
+        uses: qsnyder/action-wxt@master
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+          ROOMID: ${{ secrets.ROOMID }}
+          MESSAGE: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
-            Repository: [${{ github.repository }}](https://github.com/${{ github.repository }})
-            Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
-            Error sending message to Telegram chat
+            Repository: [ ${ { github.repository } } ](https://github.com/${{ github.repository }})
+            Author of PR: [ ${ { github.actor } } ](https://github.com/${{ github.actor }})
