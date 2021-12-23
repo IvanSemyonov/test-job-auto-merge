@@ -42,7 +42,7 @@ jobs:
         if: failure() && steps.sendMessageToTelegram.outcome == 'failure'
         uses: qsnyder/action-wxt@master
         env:
-          TOKEN: ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.WBX_TOKEN }}
           ROOMID: ${{ secrets.ROOMID }}
           MESSAGE: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
