@@ -46,5 +46,5 @@ jobs:
           ROOMID: ${{ secrets.ROOMID }}
           MESSAGE: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
-            Repository: [ ${ { github.repository } } ](https://github.com/${{ github.repository }})
-            Author of PR: [ ${ { github.actor } } ](https://github.com/${{ github.actor }})
+            Repository: [${{ github.repository }}](https://github.com/${{ github.repository }})
+            Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
