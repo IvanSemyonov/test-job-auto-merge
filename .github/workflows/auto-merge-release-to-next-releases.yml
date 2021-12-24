@@ -40,10 +40,9 @@ jobs:
             Author of PR: [${{ github.actor }}](https://github.com/${{ github.actor }})
       - name: Check on failure step "sendMessageToTelegram"
         if: failure() && steps.sendMessageToTelegram.outcome == 'failure'
-        uses: qsnyder/action-wxt@master
+        uses: ./.github/actions/webex
         env:
           TOKEN: ${{ secrets.WBX_TOKEN }}
-          LOOSE_ERROR: 1
           ROOMID: ${{ secrets.ROOMID }}
           MESSAGE: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
