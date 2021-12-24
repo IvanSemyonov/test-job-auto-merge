@@ -29,6 +29,7 @@ _wxt_message() {
 
   URL="https://api.ciscospark.com/v1/messages/"
 curl \
+    - I \
     -X POST \
     -H "Authorization:Bearer ${TOKEN}" \
     --form "roomId=${ROOMID}" \
