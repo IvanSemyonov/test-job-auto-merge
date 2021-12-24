@@ -19,7 +19,7 @@ _wxt_checks() {
     _error "ROOMID is not set."
   fi
 
-  if [ -z "${MESSAGE}" ]; then
+  if [ -z "${MESSAGEe}" ]; then
     _error "MESSAGE is not set."
   fi
 }
@@ -36,12 +36,7 @@ _wxt_message() {
     --form "markdown=${MESSAGE}" \
     ${URL} )
 
-  if [[ "$status_code" -ne 200 ]] ; then
-    echo "Site status changed to $status_code"
-    exit 1
-  else
-    exit 0
-  fi
+
 }
 
 _wxt_message
