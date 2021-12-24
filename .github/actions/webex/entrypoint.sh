@@ -1,15 +1,5 @@
 #!/bin/sh
 
-_error() {
-  echo -e "$1"
-
-  if [ "${LOOSE_ERROR}" == "true" ]; then
-    exit 0
-  else
-    exit 1
-  fi
-}
-
 _wxt_checks() {
   if [ -z "${TOKEN}" ]; then
     _error "TOKEN is not set."
@@ -35,8 +25,9 @@ _wxt_message() {
     --form "markdown=${MESSAGE}" \
     ${URL} )
 
+  echo "Site status changed to $status_code"
+
   if [[ "$status_code" -ne 200 ]] ; then
-    echo "Site status changed to $status_code"
     exit 1
   else
     exit 0

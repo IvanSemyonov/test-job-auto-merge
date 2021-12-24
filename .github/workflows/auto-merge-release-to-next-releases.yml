@@ -42,7 +42,7 @@ jobs:
         if: failure() && steps.sendMessageToTelegram.outcome == 'failure'
         uses: ./.github/actions/webex
         env:
-          TOKEN: ${{ secrets.WBX_TOKEN }}
+          TOKEN: ///////fveve
           ROOMID: ${{ secrets.ROOMID }}
           MESSAGE: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
