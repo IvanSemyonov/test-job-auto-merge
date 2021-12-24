@@ -1,14 +1,14 @@
 #!/bin/sh
 
-#_error() {
-#  echo -e "$1"
-#
-#  if [ "${LOOSE_ERROR}" == "true" ]; then
-#    exit 0
-#  else
-#    exit 1
-#  fi
-#}
+_error() {
+  echo -e "$1"
+
+  if [ "${LOOSE_ERROR}" == "true" ]; then
+    exit 0
+  else
+    exit 1
+  fi
+}
 
 _wxt_checks() {
   if [ -z "${TOKEN}" ]; then
@@ -19,7 +19,7 @@ _wxt_checks() {
     _error "ROOMID is not set."
   fi
 
-  if [ -z "${MESSAGEe}" ]; then
+  if [ -z "${MESSAGE}" ]; then
     _error "MESSAGE is not set."
   fi
 }
@@ -27,16 +27,13 @@ _wxt_checks() {
 _wxt_message() {
   _wxt_checks
 
-  URL="https://api.ciscospasfrk.com/v1/messagess/"
-
-  status_code=$(curl --write-out %{http_code} --silent --output /dev/null \
+  URL="https://api.ciscospark.com/v1/messages/"
+curl \
     -X POST \
     -H "Authorization:Bearer ${TOKEN}" \
     --form "roomId=${ROOMID}" \
     --form "markdown=${MESSAGE}" \
-    ${URL} )
-
-
+    ${URL}
 }
 
 _wxt_message
