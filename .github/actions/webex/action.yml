@@ -8,5 +8,5 @@ branding:
   color: "white"
 
 runs:
-  using: docker
-  image: docker://IvanSemyonov/action-wxt:0.1.0
+  using: 'docker'
+  image: 'Dockerfile'
