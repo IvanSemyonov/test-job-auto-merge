@@ -9,4 +9,4 @@ branding:
 
 runs:
   using: docker
-  image: docker://qsnyder/action-wxt:0.1.0
+  image: docker://IvanSemyonov/action-wxt:0.1.0
