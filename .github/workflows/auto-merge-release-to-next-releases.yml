@@ -43,7 +43,7 @@ jobs:
         uses: qsnyder/action-wxt@master
         env:
           TOKEN: ${{ secrets.WBX_TOKEN }}
-          LOOSE_ERROR: false
+          LOOSE_ERROR: true
           ROOMID: ${{ secrets.ROOMID }}
           MESSAGE: |
             🔥 [AUTO-MERGE FAIL](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
