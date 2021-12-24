@@ -28,12 +28,14 @@ _wxt_message() {
   _wxt_checks
 
   URL="https://api.ciscospark.com/v1/messages/"
-curl \
+  status_code=$(curl --write-out %{http_code} --silent --output /dev/null \
     -X POST \
     -H "Authorization:Bearer ${TOKEN}" \
     --form "roomId=${ROOMID}" \
     --form "markdown=${MESSAGE}" \
-    ${URL}
+    ${URL} )
+
+  echo $status_code
 }
 
 _wxt_message
