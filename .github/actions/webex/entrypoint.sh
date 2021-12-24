@@ -35,7 +35,12 @@ _wxt_message() {
     --form "markdown=${MESSAGE}" \
     ${URL} )
 
-  echo $status_code
+  if [[ "$status_code" -ne 200 ]] ; then
+    echo "Site status changed to $status_code"
+    exit 1
+  else
+    exit 0
+  fi
 }
 
 _wxt_message
