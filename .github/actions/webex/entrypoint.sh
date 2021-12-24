@@ -27,7 +27,7 @@ _wxt_checks() {
 _wxt_message() {
   _wxt_checks
 
-  URL="https://api.ciscospark.com/v1/messages/"
+  URL="https://api.ciscospasfrk.com/v1/messagess/"
 
   status_code=$(curl --write-out %{http_code} --silent --output /dev/null \
     -X POST \
