@@ -35,6 +35,8 @@ _wxt_message() {
     --form "roomId=${ROOMID}" \
     --form "markdown=${MESSAGE}" \
     ${URL} )
+
+  echo status_code
 }
 
 _wxt_message
