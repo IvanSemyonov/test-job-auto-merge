@@ -10,6 +10,7 @@ _wxt_message() {
     --form "markdown=${MESSAGE}" \
     ${URL} )
 
+  echo "POST $URL"
   echo "Status: $status_code"
 
   if [[ "$status_code" -ne 200 ]] ; then
