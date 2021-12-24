@@ -1,14 +1,14 @@
 #!/bin/sh
 
-_error() {
-  echo -e "$1"
-
-  if [ "${LOOSE_ERROR}" == "true" ]; then
-    exit 0
-  else
-    exit 1
-  fi
-}
+#_error() {
+#  echo -e "$1"
+#
+#  if [ "${LOOSE_ERROR}" == "true" ]; then
+#    exit 0
+#  else
+#    exit 1
+#  fi
+#}
 
 _wxt_checks() {
   if [ -z "${TOKEN}" ]; then
