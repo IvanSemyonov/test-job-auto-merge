@@ -13,11 +13,11 @@ _wxt_message() {
   http_status=$(echo "http_response" | grep HTTP |  awk '{print $2}')
 
   echo "RESPONSE:"
-  echo $http_response
+  echo $http_status
 
   if [[ "$http_status" -ne 200 ]] ; then
-    response_body=$(echo "$request_cmd" | grep body)
-    echo "Error: $response_body"
+    response_body=$(echo "$http_response" | grep body)
+    echo "Error: $"
     exit 1
   else
     exit 0
