@@ -10,7 +10,7 @@ _wxt_message() {
     --form "markdown=${MESSAGE}" \
     ${URL} )
 
-  http_status=$(echo "http_response" | grep HTTP |  awk '{print $2}')
+  http_status=$(echo "http_response" | grep HTTP)
 
   echo "RESPONSE:"
   echo $http_status
