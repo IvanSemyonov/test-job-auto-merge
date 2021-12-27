@@ -3,17 +3,20 @@
 _wxt_message() {
 
   URL="https://api.ciscospark.com/v1/messages/"
-  http_response=$(curl -i -o - --silent \
+  http_status=$(curl -w \
     -X POST \
     -H "Authorization:Bearer ${TOKEN}" \
     --form "roomId=${ROOMID}" \
     --form "markdown=${MESSAGE}" \
-    ${URL} )
+    ${URL} \
+    -o >(cat >/tmp/curl_body) \
+    "$@" ) || code="$?"
 
-  http_status=$(echo "$http_response" | grep HTTP | awk '{print $2}')
+  echo "RESPONSE"
+  echo $http_status
 
   if [[ "$http_status" -ne 200 ]] ; then
-    response_body=$(echo "$http_response" | grep body)
+    response_body="$(cat /tmp/curl_body)"
     echo $response_body
     echo "Error: $response_body"
     exit 1
