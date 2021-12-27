@@ -17,7 +17,7 @@ _wxt_message() {
 
   if [[ "$http_status" -ne 200 ]] ; then
     response_body=$(echo "$http_response" | grep body)
-    echo "Error: $"
+    echo "Error: $response_body"
     exit 1
   else
     exit 0
