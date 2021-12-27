@@ -10,10 +10,10 @@ _wxt_message() {
     --form "markdown=${MESSAGE}" \
     ${URL} )
 
-    http_status=$(echo "http_response" | grep HTTP |  awk '{print $2}')
+  http_status=$(echo "http_response" | grep HTTP |  awk '{print $2}')
 
-    echo "RESPONSE:"
-    echo $http_response
+  echo "RESPONSE:"
+  echo $http_response
 
   if [[ "$http_status" -ne 200 ]] ; then
     response_body=$(echo "$request_cmd" | grep body)
