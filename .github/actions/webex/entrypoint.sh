@@ -3,7 +3,7 @@
 _wxt_message() {
 
   URL="https://api.ciscospark.com/v1/messages/"
-  response = $(curl -s -w "%{http_code}" \
+  http_response = $(curl -s -o response.txt -w \
     -X POST \
     -H "Authorization:Bearer ${TOKEN}" \
     --form "roomId=${ROOMID}" \
@@ -11,14 +11,9 @@ _wxt_message() {
     ${URL} \
     --data-binary $1 )
 
-  body=${res::-3}
-  status_code = $(printf "%s" "response" | tail -c 3)
-
-  echo "POST $URL"
-  echo "Status: $status_code"
-
-  if [[ "$status_code" -ne 200 ]] ; then
-    echo body
+  if [[ $response != 200 ]] ; then
+    echo "Error: "
+    cat response.txt
     exit 1
   else
     exit 0
