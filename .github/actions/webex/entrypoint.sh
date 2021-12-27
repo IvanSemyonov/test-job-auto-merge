@@ -1,7 +1,7 @@
 #!/bin/sh
 
 _wxt_message() {
-
+  code=0
   URL="https://api.ciscospark.com/v1/messages/"
   http_status=$(curl -w \
     -X POST \
